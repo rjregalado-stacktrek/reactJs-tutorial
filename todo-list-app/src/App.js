@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 function TodoListApp() {
   const [tasks, setTasks] = useState([]);
@@ -59,12 +60,21 @@ function TodoListApp() {
     ));
   };
 
+  const buttonStyle = {
+      backgroundColor: 'green',
+      color: 'white',
+      fontWeight: 'bold',
+      borderRadius: '10px',
+      padding: '10px 10px',
+      marginLeft:'10px'
+    };
+
   return (
-    <div>
+    <div container>
       <h1>ToDo List App</h1>
       <div>
         <input type="text" value={inputValue} onChange={handleInputChange} />
-        <button onClick={addTask}>Add Task</button>
+        <Button variant="primary" onClick={addTask} style={buttonStyle}>Add Task</Button>
       </div>
       <div>
         <h2>All Tasks</h2>
@@ -73,6 +83,9 @@ function TodoListApp() {
       <div>
         <h2>Active Tasks</h2>
         {renderTasks(filterCompletedTasks())}
+      </div>
+      <div>
+        <p>@RF1 BATCH</p>
       </div>
     </div>
   );
