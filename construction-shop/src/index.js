@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ConstructionSite from './ConstructionSite';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ConstructionSite />, document.getElementById('root'));

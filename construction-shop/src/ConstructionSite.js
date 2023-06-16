@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import AddToCartButton from './AddToCartButton';
 
 
-function Constructionsite() {
+
+function ConstructionSite() {
   const [products, setProducts] = useState([
     { id: 1, title: 'Iphone XS', price: 8100.00 },
     { id: 2, title: 'Samsung 8', price: 2200.00 },
@@ -12,6 +14,7 @@ function Constructionsite() {
   ]);
 
   const renderProducts = () => {
+    /*
     return products.map((product) => (
       <div key={product.id} className="product-item">
       <h4>{product.title}</h4>
@@ -28,7 +31,16 @@ function Constructionsite() {
       <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
     ));
-  };
+  */
+    return products.map((product) => (
+      <div key={product.id} className="product-item">
+        <h4>{product.title}</h4>
+        <p>Price: ${product.price}</p>
+        <AddToCartButton product={product} handleQuantityChange={handleQuantityChange} addToCart={addToCart} />
+      </div>
+  ));
+
+ };
 
 const [cart, setCart] = useState([]);
 
@@ -90,8 +102,9 @@ const calculateTotalPrice = () => {
         {renderProducts()}
 
         <h2>Cart</h2>
-         
+         {renderCartItems()}
         <p>Total Price: ${calculateTotalPrice()}</p>
+
 
     </div>
  
@@ -99,9 +112,9 @@ const calculateTotalPrice = () => {
   </Row>
   </>
   );
-}
-
-export default Constructionsite;
+  }
+  
+export default ConstructionSite;
 
 //{renderCartItems()}
 
