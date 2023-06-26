@@ -25,6 +25,7 @@ export default AddToCartButton;
 */
 
 const AddToCartButton = ({ product, handleQuantityChange, addToCart }) => {
+  
     return (
       <div>
         <label htmlFor={`quantity_${product.id}`}>Quantity:</label>

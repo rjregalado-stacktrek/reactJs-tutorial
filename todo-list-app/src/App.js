@@ -1,4 +1,4 @@
-/*
+
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 
@@ -27,7 +27,7 @@ function TodoListApp() {
   const toggleTaskCompletion = (taskId) => {
     const updatedTasks = tasks.map((task) => {
       if (task.id === taskId) {
-        return { ...task, completed: !task.completed };
+        return { ...task, completed: !task.completed }; // rest 
       }
       return task;
     });
@@ -94,7 +94,7 @@ function TodoListApp() {
 
 export default TodoListApp;
 
-*/
+/*
 export default function App() {
   return (
       <div>
@@ -111,3 +111,4 @@ export default function App() {
 
   )
 }
+*/

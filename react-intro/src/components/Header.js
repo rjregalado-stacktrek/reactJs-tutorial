@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import NavBar from './NavBar';
 
@@ -11,3 +12,21 @@ const Header = () => {
 };
 
 export default Header;
+*/ 
+
+//rafce
+
+import React from 'react'
+import NavBar from './NavBar';
+
+const Header = () => {
+  return (
+    <div>
+      <h1>Welcome RF Batch 1</h1>
+      <NavBar/>
+    </div>
+  )
+}
+
+export default Header;
+

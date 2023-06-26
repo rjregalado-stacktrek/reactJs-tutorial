@@ -1,102 +1,113 @@
-/*
-import React, { useState } from 'react';
-import './App.css';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import AddToCartButton from './components/AddToCartButton';
 
-function ConstructionSite() {
-  const [products, setProducts] = useState([   // counter = 5, setCounter(counter+1), counter = 6
-    { id: 1, title: 'Iphone XS', price: 8100.00 },
-    { id: 2, title: 'Samsung 8', price: 2200.00 },
-    { id: 3, title: 'IPad', price: 1250.00 },
-    { id: 4, title: 'Iphone XL', price: 2250.00 },
-  ]);
+// import React, { useState } from 'react';
+// import './ConstructionSite.css';
+// import { Grid, Row, Col } from 'react-flexbox-grid';
+// //import AddToCartButton from './components/AddToCartButton';
+
+// function AddToCartButton(props) {
+//   const [quantity, setQuantity] = useState(0);
+//   let product = props.product
+
+//   const handleQuantityChange = (quantity) => {
+//     setQuantity(quantity);
+
+//   };
+
+
+// const [cart, setCart] = useState([]);
+
+// // const handleQuantityChange = (pId, quantity) => {
+// //   const updatedCart = cart.map((item) => {
+// //     if (item.pId === pId) {
+// //       return { ...item, quantity: Number(quantity) }; // spread array
+// //     }
+// //     return item;
+// //   });
+// //   setCart(updatedCart);
+// // };
+
+// const addToCart = (product) => {
+//   const itemInCart = cart.find((item) => item.pId === product.id);
+//   if (itemInCart) {
+//     const updatedCart = cart.map((item) => {
+//       if (item.pId === product.id) {
+//         return { ...item, quantity: item.quantity + 1 };
+//       }
+//       return item;
+//     });
+//     setCart(updatedCart);
+//   } else {
+//     setCart([...cart, { pId: product.id, quantity: 1 }]);
+//   }
+//   setQuantity(0);
+// };
+
+// const renderCartItems = () => {
+//   return cart.map((item) => {
+//     const product = products.find((p) => p.id === item.pId);
+//     return (
+//       <div key={item.pId}>
+//         <h2>{product.title}</h2>
+//         <p>Price: ${product.price}</p>
+//         <p>Quantity: {item.quantity}</p>
+//       </div>
+//     );
+//   });
+// };
+
+// const calculateTotalPrice = () => {
+//   let total = 0;
+//   cart.forEach((item) => {
+//     const product = products.find((p) => p.id === item.pId);
+//     total += product.price * item.quantity;
+//   });
+//   return total.toFixed(2);
+// };
+// }
+
+// function ConstructionSite() {
+//   const [products, setProducts] = useState([   // counter = 5, setCounter(counter+1), counter = 6
+//     { id: 1, title: 'Iphone XS', price: 8100.00 },
+//     { id: 2, title: 'Samsung 8', price: 2200.00 },
+//     { id: 3, title: 'IPad', price: 1250.00 },
+//     { id: 4, title: 'Iphone XL', price: 2250.00 },
+//   ]);
   
   
-  const renderProducts = () => {
-    return products.map((product) => (
-      <div key={product.id} className="product-item">
-        <h4>{product.title}</h4>
-        <p>Price: ${product.price}</p>
-        <AddToCartButton product={product} handleQuantityChange={handleQuantityChange} addToCart={addToCart} />
-      </div>
-  ));
+//   const renderProducts = () => {
+//     return products.map((product) => (
+//       <div key={product.id} className="product-item">
+//         <h4>{product.title}</h4>
+//         <p>Price: ${product.price}</p>
+//         <AddToCartButton product={product}/>
+//       </div>
+//   ));
 
- };
+//  };
 
-const [cart, setCart] = useState([]);
+//  return (
+//   <>
+//   <Row >
+//     <div className='layout'>
+//         <h1>My Shop</h1>
 
-const handleQuantityChange = (pId, quantity) => {
-  const updatedCart = cart.map((item) => {
-    if (item.pId === pId) {
-      return { ...item, quantity: Number(quantity) }; // spread array
-    }
-    return item;
-  });
-  setCart(updatedCart);
-};
-
-const addToCart = (product) => {
-  const itemInCart = cart.find((item) => item.pId === product.id);
-  if (itemInCart) {
-    const updatedCart = cart.map((item) => {
-      if (item.pId === product.id) {
-        return { ...item, quantity: item.quantity + 1 };
-      }
-      return item;
-    });
-    setCart(updatedCart);
-  } else {
-    setCart([...cart, { pId: product.id, quantity: 1 }]);
-  }
-};
-
-const renderCartItems = () => {
-  return cart.map((item) => {
-    const product = products.find((p) => p.id === item.pId);
-    return (
-      <div key={item.pId}>
-        <h2>{product.title}</h2>
-        <p>Price: ${product.price}</p>
-        <p>Quantity: {item.quantity}</p>
-      </div>
-    );
-  });
-};
-
-const calculateTotalPrice = () => {
-  let total = 0;
-  cart.forEach((item) => {
-    const product = products.find((p) => p.id === item.pId);
-    total += product.price * item.quantity;
-  });
-  return total.toFixed(2);
-};
-
-  return (
-  <>
-  <Row >
-    <div className='layout'>
-        <h1>My Shop</h1>
-
-        <h2>Products</h2>
+//         <h2>Products</h2>
         
-        {renderProducts()}
+//         {renderProducts()}
 
-        <h2>Cart</h2>
-         {renderCartItems()}
-        <p>Total Price: ${calculateTotalPrice()}</p>
+//         <h2>Cart</h2>
+//         <p>Total Price: </p>
 
-    </div>
+//     </div>
  
-  </Row>
-  </>
-  );
-  }
+//   </Row>
+//   </>
+//   );
+//   }
   
-export default ConstructionSite;
+// export default ConstructionSite;
 
-*/
+
 /*
 import React, { useState } from 'react';
 //import AddToCartButton from '../components/AddToCartButton';
@@ -194,11 +205,13 @@ export default ConstructionSite;
 
 // Melissa
 
+/*
 
 import React, { useState } from "react";
 //import AddToCartButton from './components/AddToCartButton';
 
-const AddToCartButton = ({ product, handleQuantityChange, addToCart })=>{
+const AddToCartButton = ({ product, handleQuantityChange, addToCart,  quantity })=>{
+
     return (
       <div>
         <label htmlFor={`quantity_${product.id}`}>Quantity:</label>
@@ -208,9 +221,9 @@ const AddToCartButton = ({ product, handleQuantityChange, addToCart })=>{
           id={`quantity_${product.id}`}
           min="0"
           defaultValue="0"
-          onChange={(e) => handleQuantityChange(product.id, e.target.value)}
+          onChange={(e) => handleQuantityChange(quantity)}
         />
-    
+         
         <button onClick={() => addToCart(product)}>Add to Cart</button>
       </div>
     );
@@ -248,25 +261,35 @@ function ConstructionSite() {
   
     const [cart, setCart] = useState([]);
 
-    const handleQuantityChange = (pId, quantity) => {
-    const updatedCart = cart.map((item) => { // products.map to cart.map
-      if (item.pId === pId) {
-        return { ...item, quantity: Number(quantity)};
-      }
-      return item;
-    });
+
+    const [quantity, setQuantity] = useState(0);
+    //let product = props.product
+
+    const handleQuantityChange = () => {
+    setQuantity(quantity);
+
+  };
+
+
+    // const handleQuantityChange = (pId, quantity) => {
+    // const updatedCart = cart.map((item) => { // products.map to cart.map
+    //   if (item.pId === pId) {
+    //     return { ...item, quantity: Number(quantity)};
+    //   }
+    //   return item;
+    // });
     //setProducts(updatedProduct)
     // console.log(setProducts)
-    setCart(updatedCart);
+    //setCart(updatedCart);
     // console.log(setCart)
-  };
+    //};
 
     const renderProducts = () => {
     return products.map((product) => (
       <div key={product.id}>
         <h4>{product.title}</h4>
         <p>Price: ${product.price}</p>
-        <AddToCartButton product={product} handleQuantityChange={handleQuantityChange} addToCart={addToCart}/>       
+        <AddToCartButton product={product} handleQuantityChange={handleQuantityChange} addToCart={addToCart} quantity={quantity}/>       
       </div>
     ));
   };
@@ -278,7 +301,7 @@ function ConstructionSite() {
     if (itemInCart) {
       const updatedCart = cart.map((item) => {
         if (item.pId === product.id) {
-          return { ...item, quantity: Number(item.quantity + 1) };
+          return { ...item, quantity: (item.quantity + Number(quantity)) };
         }
         return item;
       });
@@ -286,6 +309,7 @@ function ConstructionSite() {
     } else {
       setCart([...cart, { pId: product.id, quantity: 1 }]);
     }
+    setQuantity(0);
   };
 
   const renderCartItems = () => {
@@ -333,3 +357,258 @@ function ConstructionSite() {
 }
 
 export default ConstructionSite;
+*/
+
+/*
+import React, { useState } from "react";
+import AddToCartButton from "./components/AddtoCartButtonAlex";
+
+function ConstructionSite() {   
+  const [products, setProducts] = useState([
+    { id: 1, title: 'Product 1', price: 100.00 },
+    { id: 2, title: 'Product 2', price: 200.00 },
+    { id: 3, title: 'Product 3', price: 250.00 },
+    { id: 4, title: 'Product 4', price: 250.00 },
+  ]);
+
+
+const renderProducts = () => {
+  
+  return products.map((product) => (
+    <div key={product.id} className="product-item">
+      <h4>{product.title}</h4>
+      <p>Price: ${product.price}</p>
+      <AddToCartButton product={product}/>
+    </div>
+));
+
+};
+
+const [cart, setCart] = useState([]);
+
+// const handleQuantityChange = (productId, quantity) => {
+// const updatedCart = cart.map((item) => {
+//   if (item.productId === productId) {
+//     return { ...item, quantity: Number(quantity) };
+//   }
+//   return item;
+// });
+// setCart(updatedCart);
+// };
+
+// const addToCart = (product) => {
+// const itemInCart = cart.find((item) => item.productId === product.id);
+// if (itemInCart) {
+//   const updatedCart = cart.map((item) => {
+//     if (item.productId === product.id) {
+//       return { ...item, quantity: item.quantity + 1 };
+//     }
+//     return item;
+//   });
+//   setCart(updatedCart);
+// } else {
+//   setCart([...cart, { productId: product.id, quantity: 1 }]);
+// }
+// };
+
+
+
+const calculateTotalPrice = () => {
+let total = 0;
+cart.forEach((item) => {
+  const product = products.find((p) => p.id === item.productId);
+  total += product.price * item.quantity;
+    });
+return total.toFixed(2);
+  };
+
+  return (
+
+
+    <div>
+      <h1>My Shop</h1>
+
+      <h2>Products</h2>
+      
+      {renderProducts()}
+      <h1>----------------</h1>
+      <h2>Cart</h2>
+      <p>Total Price: ${calculateTotalPrice}</p>
+      
+
+    </div>
+
+  );
+};
+export default ConstructionSite;
+
+*/
+
+import React, { useState } from 'react';
+
+const ConstructionSite = () => {
+  const [products, setProducts] = useState([
+    { id: 1, title: 'Product 1', price: 100.0, quantity: 0 },
+    { id: 2, title: 'Product 2', price: 200.0, quantity: 0 },
+    { id: 3, title: 'Product 3', price: 250.0, quantity: 0 },
+    { id: 4, title: 'Product 4', price: 250.0, quantity: 0 },
+  ]);
+
+  const [cartItems, setCartItems] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  // const handleAddToCart = (product) => {
+  //   const updatedProducts = products.map((p) => {
+  //     if (p.id === product.id) {
+  //       return { ...p, quantity: p.quantity + product.quantity };
+  //     }
+  //     return p;
+  //   });
+
+  //   setProducts(updatedProducts);
+
+  //   const itemInCart = cartItems.find((item) => item.id === product.id);
+
+  //   if (itemInCart) {
+  //     const updatedCartItems = cartItems.map((item) => {
+  //       if (item.id === product.id) {
+  //         return { ...item, quantity: item.quantity + product.quantity };
+  //       }
+  //       return item;
+  //     });
+
+  //     setCartItems(updatedCartItems);
+  //   } else {
+  //     setCartItems([...cartItems, { ...product, quantity: 1 }]);
+  //   }
+
+  //   setTotalPrice(calculateTotalPrice());
+  // };
+
+  const handleAddToCart = (product) => {
+  const updatedProducts = products.map((p) => {
+    if (p.id === product.id) {
+      return { ...p, quantity: p.quantity + product.quantity };
+    }
+    return p;
+  });
+
+  setProducts(updatedProducts);
+
+  const itemInCart = cartItems.find((item) => item.id === product.id);
+
+  if (itemInCart) {
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === product.id) {
+        return { ...item, quantity: item.quantity + product.quantity };
+      }
+      return item;
+    });
+
+    setCartItems(updatedCartItems);
+    setTotalPrice(calculateTotalPrice(updatedCartItems))
+    console.log("Updated Cart Items", updatedCartItems);
+  } else {
+    setCartItems([...cartItems, { ...product, quantity: product.quantity }]);
+    //setTotalPrice(calculateTotalPrice(updatedProducts))
+  }
+
+  //setTotalPrice(calculateTotalPrice(cartItems));
+  //resetQuantityInput(product.id);
+  
+};
+// const resetQuantityInput = (productId) => {
+//   const inputElement = document.getElementById(`quantity-${productId}`);
+//   if (inputElement) {
+//     inputElement.value = 0;
+//   }
+// };
+
+
+
+  const handleRemoveFromCart = (product) => {
+    const updatedProducts = products.map((p) => {
+      if (p.id === product.id && p.quantity > 0) {
+        return { ...p, quantity: p.quantity - product.quantity };
+      }
+      return p;
+    });
+
+    setProducts(updatedProducts);
+
+    const itemInCart = cartItems.find((item) => item.id === product.id);
+
+    if (itemInCart && itemInCart.quantity > 0) {
+      const updatedCartItems = cartItems.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, quantity: item.quantity - product.quantity };
+        }
+        return item;
+      });
+
+    setCartItems(updatedCartItems);
+    setTotalPrice(calculateTotalPrice(updatedCartItems));
+
+    }
+
+    //setTotalPrice(calculateTotalPrice(updatedProducts));
+  };
+
+  const handleQuantityChange = (product, newQuantity) => {
+    const updatedProducts = products.map((p) => {
+      if (p.id === product.id) {
+        return { ...p, quantity: newQuantity };
+      }
+      return p;
+    });
+
+    setProducts(updatedProducts);
+    //setTotalPrice(calculateTotalPrice(updatedProducts))
+  };
+
+  const calculateTotalPrice = (updatedProducts) => {
+    return updatedProducts.reduce((total, product) => total + product.price * product.quantity, 0);
+  };
+
+  const renderProducts = () => {
+    return products.map((product) => (
+      <div key={product.id}>
+        <h2>{product.title}</h2>
+        <p>Price: ${product.price}</p>
+        <p>Quantity: <input type="number" min="0" defaultValue="0" onChange={(e) => handleQuantityChange(product, parseInt(e.target.value || 0))} /></p>
+        <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+        <button onClick={() => handleRemoveFromCart(product)}>
+          Remove from Cart
+        </button>
+      </div>
+    ));
+  };
+
+  const renderCartItems = () => {
+    return cartItems.map((item) => (
+      <div key={item.id}>
+        <h3>{item.title}</h3>
+        <p>Price: ${item.price}</p>
+        <p>Quantity: {item.quantity}</p>
+      </div>
+    ));
+  };
+
+  return (
+    <div>
+      <h1>Construction Shop</h1>
+      <div>
+        <h2>Products</h2>
+        {renderProducts()}
+      </div>
+      <div>
+        <h2>Cart</h2>
+        {renderCartItems()}
+        <p>Total Price: ${totalPrice}</p>
+      </div>
+    </div>
+  );
+};
+
+export default ConstructionSite;
+
