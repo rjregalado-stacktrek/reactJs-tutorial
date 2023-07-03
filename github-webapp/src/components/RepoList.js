@@ -6,7 +6,7 @@ const RepoList = () => {
 
   // Fetch repository data
   useEffect(() => {
-    axios
+    axios // CRUD (Create, Read, Update, Delete)| POST, GET, PUT, PATCH, DELETE
       .get('https://api.github.com/users/rjregalado-stacktrek/repos')
       .then(response => {
         setRepos(response.data);
@@ -22,11 +22,18 @@ const RepoList = () => {
       <div className="repo-list">
         {repos.map(repo => (
           <div key={repo.id} className="repo-card">
-            <img src={repo.owner.avatar_url} alt="Repo Owner" className="avatar" />
+            
             <div>
+              <p>{repo.created_at} <span style={{marginLeft:20, fontWeight:'normal'}}>{repo.topics[0]}</span></p>
               <h2>{repo.name}</h2>
               <p>{repo.description}</p>
-              <a href={repo.html_url} target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <div className="inline-by-line" style={{display:'flex', padding:2}}>
+                <img src={repo.owner.avatar_url} alt="Repo Owner" className="avatar" />
+                <div className='batch' style={{marginTop:1}}>
+                  <h4 style={{marginTop:1}}>{repo.owner.login}</h4>
+                  <p >Batch RF-1</p>
+                </div>
+              </div>
             </div>
           </div>
         ))}
