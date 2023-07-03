@@ -58,6 +58,8 @@ const App = () => {
 export default App;
 */
 
+//import { useState } from "react";
+
 /*
 import React from 'react';
 import Header from './components/Header';
@@ -159,36 +161,104 @@ const App = props => {
 export default App;
 */
 
-import React, { useState, useEffect } from 'react';
-//import TodoList from './components/UI/TodoList';
-//import Profile from './components/UI/Profile';
-//import PackingList from './components/UI/PackingList';
-//import TeaSet from './components/UI/TeaSet';
-import Movie from './components/UI/Movie';
+// import React, { useState, useEffect } from 'react';
+// //import TodoList from './components/UI/TodoList';
+// //import Profile from './components/UI/Profile';
+// //import PackingList from './components/UI/PackingList';
+// //import TeaSet from './components/UI/TeaSet';
+// import Movie from './components/UI/Movie';
 
-const App = () => {
-    const [resourceType, setResourceType] = useState('')
+// const App = () => {
+//     // const [resourceType, setResourceType] = useState('posts');
+//     // const [items, setItems] = useState([]);
 
-    console.log('render')
+//     // console.log('render')
 
-    useEffect(()=>{
-        console.log('resource type changed')
-    },[resourceType])
+//     // useEffect(()=>{
+//     //     console.log('resource type changed')
+//     //     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+//     //       .then((response) => response.json())
+//     //       .then((json) => setItems(json));
+//     // });
+
+//     const [windowWidth, setwindowWidth] = useState(window.innerWidth);
+//     const [windowHeight, setwindowHeight] = useState(window.innerHeight);
+
+//     const handleResizeWidth = () => {
+//       setwindowWidth(window.innerWidth)
+//     }
+
+//     const handleResizeHeight = () => {
+//       setwindowHeight(window.innerHeight)
+//     }
+
+//     useEffect(()=>{
+//       window.addEventListener('width', handleResizeWidth);
+//       window.addEventListener('height', handleResizeHeight);
+//     },[]);
   
-    return (
-        <>
-            <div>
-                <button onClick={() => setResourceType('posts')}>Posts</button>
-                <button onClick={() => setResourceType('comments')}>Comments</button>
-                <button onClick={() => setResourceType('users')}>Users</button>
-            </div>
+//     return (
+            //<> </> means fragment in react
+//         <> 
+//             {/* <div>
+//                 <button onClick={() => setResourceType('posts')}>Posts</button>
+//                 <button onClick={() => setResourceType('comments')}>Comments</button>
+//                 <button onClick={() => setResourceType('users')}>Users</button>
+//             </div>
 
-            <h1>{resourceType}</h1>
-            <div>
-            <Movie/>
-            </div>
-        </>
+//             <h1>{resourceType}</h1>
+//             {items.map((item)=>{
+//               return <pre>{JSON.stringify(item)}</pre>
+//             })}; */}
+//             {/* <div>
+//             <Movie/>
+//             </div> */}
+//             <div>Width: {windowWidth}</div>
+//             <div>Height: {windowHeight}</div>
+//         </>
+//   )
+// }
+
+// export default App;
+
+// import React, { useState } from 'react';
+// import Simple from './components/hooks/Simple'
+
+// function App() {
+  
+//   const [count, setCount] = useState(0);
+//   const updateCount = () => setCount(count + 1);
+  
+//   return (
+//     <div>
+//       <button onClick={updateCount}>{count}</button>
+//       {count < 5 && <Simple count={count} />}
+//       {count < 5 && <Simple count={-1} />}
+//     </div>
+//   )
+// }
+
+// export default App;
+
+import React, {useState} from "react";
+import Button from 'react-bootstrap/Button';
+
+function App(){
+  const [left, setLeft] = useState(0);
+  const [right, setRight] = useState(0);
+
+  return (
+    <>
+      <div>
+        {left}
+        <Button variant="primary" className="container mt-2" onClick={()=>setLeft(left+1)}>left</Button>
+      </div>
+      <div className="container mt-2">
+        <Button variant="secondary" onClick={()=>setRight(right+1)}>right</Button>
+      </div>
+      <div className="container mt-2">{right}</div>
+    </>
   )
-}
 
+}
 export default App;

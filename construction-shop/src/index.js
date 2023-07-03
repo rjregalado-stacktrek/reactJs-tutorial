@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ConstructionSite from './ConstructionSite';
+import './index.css';
+import ConstructionSite1 from './ConstructionSite1';
 
-ReactDOM.render(<ConstructionSite />, document.getElementById('root'));
+ReactDOM.render(<ConstructionSite1 />, document.getElementById('root'));
