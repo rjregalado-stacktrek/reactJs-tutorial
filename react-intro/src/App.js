@@ -240,25 +240,40 @@ export default App;
 
 // export default App;
 
-import React, {useState} from "react";
-import Button from 'react-bootstrap/Button';
+// import React, {useState} from "react";
+// import Button from 'react-bootstrap/Button';
 
-function App(){
-  const [left, setLeft] = useState(0);
-  const [right, setRight] = useState(0);
+// function App(){
+//   const [left, setLeft] = useState(0);
+//   const [right, setRight] = useState(0);
+
+//   return (
+//     <>
+//       <div>
+//         {left}
+//         <Button variant="primary" className="container mt-2" onClick={()=>setLeft(left+1)}>left</Button>
+//       </div>
+//       <div className="container mt-2">
+//         <Button variant="secondary" onClick={()=>setRight(right+1)}>right</Button>
+//       </div>
+//       <div className="container mt-2">{right}</div>
+//     </>
+//   )
+
+// }
+// export default App
+
+const App = (props) => {
+  const { notes } = props
 
   return (
-    <>
-      <div>
-        {left}
-        <Button variant="primary" className="container mt-2" onClick={()=>setLeft(left+1)}>left</Button>
-      </div>
-      <div className="container mt-2">
-        <Button variant="secondary" onClick={()=>setRight(right+1)}>right</Button>
-      </div>
-      <div className="container mt-2">{right}</div>
-    </>
+    <div>
+      <h1>Notes</h1>
+      <ul>
+        {notes.map((note)=><li key={note.id}>{note.content}</li>)}
+      </ul>
+    </div>
   )
-
 }
-export default App;
+
+export default App
