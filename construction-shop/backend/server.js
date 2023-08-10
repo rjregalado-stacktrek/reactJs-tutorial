@@ -64,13 +64,13 @@ app.delete('/api/products/:id', (req,res) => {
 // add a new entry
 app.post('/api/products', (req, res) => {
     const maxId = products.length > 0
-        ? Math.max(...products.map(n => n.id))
+        ? Math.max(...products.map(n => n.id)) // maxId = max[2,3] = 3  
         : 0;
     const product = req.body;
     //product.id = maxId + 1; // Assign a new ID to the product
 
     products.push(product); // Add the product to the array
-
+    console.log(products)
     res.json(product);
 });
 
